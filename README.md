@@ -1,4 +1,7 @@
-[![Ruby](https://github.com/ruby/debug/actions/workflows/ruby.yml/badge.svg?branch=master)](https://github.com/ruby/debug/actions/workflows/ruby.yml?query=branch%3Amaster) [![Protocol](https://github.com/ruby/debug/actions/workflows/protocol.yml/badge.svg)](https://github.com/ruby/debug/actions/workflows/protocol.yml)
+Mod of ruby debugger to accept `SKIP_DEBUG` env var, if you don't want to interact with `debugger` statements in a given confirmatory run. Also enables a `c!` command to continue and skip rest of debugger statements.
+
+---
+
 
 # debug.rb
 
