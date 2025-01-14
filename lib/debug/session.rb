@@ -527,7 +527,14 @@ module DEBUGGER__
                        cancel_auto_continue: true do |arg|
         leave_subsession :continue
       end
-
+      
+      # * `c!` or `cont!` or `continue!`
+      #   * Resume the program, disabling further debugger statements.
+      register_command 'c!', 'cont!', 'continue!' do |arg|
+        ENV['SKIP_DEBUG'] = 'true'                         
+        leave_subsession :continue
+      end
+      
       # * `q[uit]` or `Ctrl-D`
       #   * Finish debugger (with the debuggee process on non-remote debugging).
       register_command 'q', 'quit' do |arg|
