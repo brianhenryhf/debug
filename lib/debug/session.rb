@@ -2624,6 +2624,8 @@ end
 
 module Kernel
   def debugger pre: nil, do: nil, up_level: 0
+    return if ENV['SKIP_DEBUG']&.casecmp?('true')
+    
     return if !defined?(::DEBUGGER__::SESSION) || !::DEBUGGER__::SESSION.active?
 
     if pre || (do_expr = binding.local_variable_get(:do))
